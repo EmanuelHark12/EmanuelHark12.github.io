@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Emanuel Hark Maciel - Analysis
+    </title>
+    <meta charset="utf-8">
+    <meta name="author" content="<!--rinline cat('Emanuel Hark Maciel') -->">
+    <meta name='description' content="<!--rinline cat('This Site contains Emanuel Hark Maciel analysis, essays, thoughts, etc.') -->">
+    <link rel='stylesheet' href='../../css/normalize.css'>
+    <link rel='stylesheet' href='../../css/style.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='../../js/language.js'></script>
+    <script src="https://kit.fontawesome.com/d7d04966f2.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" type="image/x-icon" href="https://emanuelhark12.github.io/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="apple-touch-icon" sizes="57x57" href="../../img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../img/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="https://emanuelhark12.github.io/img/img/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../img/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://emanuelhark12.github.io/img/favicon-16x16.png">
+<link rel="manifest" href="../../img/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="../../img/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff"> 
+</head>
+
+<body>
+<header id='header'>
+           <nav class='top-nav navbar'>
+                <span class="navbar-toggle" id="js-navbar-toggle">
+                    <i class="fas fa-bars"></i>
+                </span>
+                <a class='header-logo logo' >
+                    <img src='../../img/logo.png'>
+                </a>
+                <ul class='main-nav' id="js-menu">
+                    <li>
+                        <a class='lang nav-links' href='#about' key='about'>About Me</a>
+                    </li>
+                    <li>
+                        <a class='lang nav-links' href='#analysis' key='analysis'>Analysis</a>
+                    </li>
+                    <li>
+                        <a class='lang nav-links' href='#thoughts' key='thought'>Thoughts</a>
+                    </li>
+                    <li >
+                        <a class='lang nav-links' href='#study' key='study'>Studies</a>
+                    </li>
+                    <li >
+                       <a class='lang nav-links' href='#works' key='works'> Works</a>
+                    </li>
+                    <li>
+                        <select class='translated nav-links'>
+                            <option value='en'> English </option>
+                            <option value='pt'> Português</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul class='main-nav' id="js-menu-web">
+                    <li>
+                        <a class='lang nav-links' href='#about' key='about'>About Me</a>
+                    </li>
+                    <li>
+                        <a class='lang nav-links' href='#analysis' key='analysis'>Analysis</a>
+                    </li>
+                    <li>
+                        <a class='lang nav-links' href='#thoughts' key='thought'>Thoughts</a>
+                    </li>
+                    <li >
+                        <a class='lang nav-links' href='#study' key='study'>Studies</a>
+                    </li>
+                    <li >
+                       <a class='lang nav-links' href='#works' key='works'> Works</a>
+                    </li>
+                    <li>
+                        <select class='translated nav-links'>
+                            <option value='en' selected> English </option>
+                            <option value='pt'> Português</option>
+                        </select>
+                    </li>
+                </ul>
+        </nav> 
+    </header>
+<main>
+<!--begin.rcode include=FALSE,warning=FALSE
+dados_final <- read.csv('/home/emanuelhark12/Documentos/Site/EmanuelHark12.github.io/public/analysis/data/02-dados_final.csv') |> 
+  dplyr::rename(id = X,Name = Titulo,Type = New_Tipo,Time = New_Tempo,Price = Preco,Rating = New_Nota,User = Dono) |> 
+  dplyr::mutate(User = dplyr::recode(User,'Emanuel'='E','Alexandre'='A','Emerson'='M','Gustavo'='G'))
+sumario = summary(dados_final) # Verificação das variáveis
+sumario
+dados_eng <- dados_final |> dplyr::mutate(Type = dplyr::recode(Type,'Lanches' = 'Snacks','Italiana' = 'Italian','Doces & Bolos' = 'Sweets & Cakes','Saudável' = 'Fit','Brasileira' = 'Brazilian','Japonesa' = 'Japonese','Coreana' = 'Korean', 'Árabe' = 'Arabian','Mercado' = 'Supermarket','Salgados'='Savory','Pastel' = 'Pastry','Carnes' = 'Meats','Chinesa' = 'Chinese', 'Cafeteria' = 'Coffee Shop','Padaria' = 'Bakery',
+'Hambúrger'='Burguer','Portuguesa'='Portuguese','Bebidas'='Drinks')) 
+end.rcode-->
+<h1 class='lang section-title' key='analysis-title-02'>
+Exploration Data Analysis of Restaurants in Ifood
+</h1>
+<h2 class='lang section-about' key='analysis-subtitle-02'>
+Analysis of data from restaurants around the homes of IME Jr members
+</h2>
+<h2 class='lang section-about' key='analysis-date-02'>
+11/16/2021
+</h2>
+<div class='img-analysis'>
+  <img src='../../img/Ifood.jpg'> </img>
+</div>
+<h3 class='lang section-about' key='analysis-item-02-01'>
+Introduction
+</h3>
+<p class='lang section-text' key='analysis-text-01-01'>
+This is an analysis of data on Ifood's restaurants that are located around the homes of the IME Jr's members. The main objective of this analysis is to collect data from the internet through web-scraping and process them.
+</p>
+<p class='lang section-text' key='analysis-text-01-00'>
+For this analysis, the R language was used with the packages:
+</p>
+<ul>
+  <li class='lang' key='analysis-packages-08'> Stringr: String-type variable treatments</li>
+  <li class='lang' key='analysis-packages-02'> Tidyr: Tidy Data</li>
+  <li class='lang' key='analysis-packages-03'> Dplyr: Data manipulation to extract results</li>
+  <li class='lang' key='analysis-packages-09'> Purrr: Functional programming</li>
+  <li class='lang' key='analysis-packages-14'> Forcats: Treatment of categorical variables </li>
+  <li class='lang' key='analysis-packages-04'> Ggplot2: Elaboration of statistical graphics</li>
+  <li class='lang' key='analysis-packages-10'> Parsnip: Simplifying Model Building</li>
+  <li class='lang' key='analysis-packages-11'> Recipes: Data preparation through feature engineering for model building  </li>
+  <li class='lang' key='analysis-packages-12'> Broom: Treatment of statistical results  </li>
+  <li class='lang' key='analysis-packages-13'> Workflows: Integration between parsnip packages and recipes  </li>
+</ul>
+<h3 class='lang section-about' key='analysis-item-02-02'>
+Treatment
+</h3>
+<p class='lang section-text' key='analysis-text-02-01'>
+Por conta de praticidade, cada membro da EJ utilizou a extensão Web Scraper - Free Web Scraping em navegadores Chromium para a coleta das seguintes informações referentes a 30 empresas localizadas ao redor do membro:
+For a pratice reason, each IME JR member use a Chromium extension 'Web Scraper - Free Web Scraping' for collect the followings information about 30 restaurants around the house of IME Jr member:
+</p>
+<ul>
+  <li class='lang' key='analysis-variable-02-01'> id: Variable of identity;</li>
+  <li class='lang' key='analysis-variable-02-02'> Name: Name of restaurant;</li>
+  <li class='lang' key='analysis-variable-02-03'> Type: Specialty of restaurant;</li>
+  <li class='lang' key='analysis-variable-02-04'> Time: Duration of delivery from restaurant to home in minutes;</li>
+  <li class='lang' key='analysis-variable-02-05'> Price: Price of restaurant food or drink in BRL;</li>
+  <li class='lang' key='analysis-variable-02-06'> Rating: Rating given by user to the restaurant;</li>
+  <li class='lang' key='analysis-variable-02-07'> User: IME Jr member who collect restaurant information;</li>
+</ul>
+<h3 class='lang section-about' key='analysis-item-02-03'>
+Exploration Analysis
+</h3>
+<p class='lang section-text' key='analysis-text-02-02'>
+For analysis, we used data from myself and 3 other IME Jr members, cited by E, M, A and G.
+</p>
+<p class='lang section-text' key='analysis-text-02-03'>
+From now on, the variables will be analyzed one-dimensionally.
+</p>
+<!--begin.rcode echo=FALSE,warning=FALSE,include=FALSE
+loja_distinto <- dados_final |> 
+  dplyr::group_by(User) |> 
+  dplyr::summarise(Number = dplyr::n_distinct(Type))
+
+distinct_shop <- dados_eng |> 
+  dplyr::group_by(User) |> 
+  dplyr::summarise(Number = dplyr::n_distinct(Type))
+
+n_loja <- dados_final |> 
+  dplyr::group_by(Type)|> 
+  dplyr::summarise(Num=dplyr::n())
+
+n_shop <- dados_eng |> 
+  dplyr::group_by(Type)|> 
+  dplyr::summarise(Num=dplyr::n())
+end.rcode-->
+<p class='lang section-text' key='analysis-text-02-04'>
+  The first variable observed is the Type, where there is a predominance of Snacks, which is the most common restaurant specialty, then there are Japanese, which grew recently, and Pizza type restaurants, which have more than 10 restaurants.
+</p>
+<div class='lang eng-image'>
+<!--begin.rcode echo=FALSE,warning=FALSE
+ggplot2::ggplot(n_shop,ggplot2::aes(y=forcats::fct_reorder(Type,Num),x=Num,fill=Num<=10)) +
+  ggplot2::geom_bar(stat='identity',show.legend = FALSE) +
+  ggplot2::labs(x='Number of restaurants',y='Specialty') +
+  ggplot2::ggtitle("Number of restaurants by type around the members of IME Jr") +
+  ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))  +
+  ggplot2::coord_cartesian(xlim=c(0,50),expand = FALSE) 
+  
+end.rcode-->
+</div>
+
+<div class='lang pt-image'>
+<!--begin.rcode echo=FALSE,warning=FALSE
+ ggplot2::ggplot(n_loja,ggplot2::aes(y=forcats::fct_reorder(Type,Num),x=Num,fill=Num<=10)) +
+  ggplot2::geom_bar(stat='identity',show.legend = FALSE) +
+  ggplot2::labs(x='Número de restaurantes',y='Especialidade') +
+  ggplot2::ggtitle("Número de restaurantes por tipo nos arredorres dos membros da IME Jr") +
+  ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))  +
+  ggplot2::coord_cartesian(xlim=c(0,50),expand = FALSE) 
+end.rcode-->
+</div>
+<!--begin.rcode echo=FALSE,warning=FALSE,include=FALSE
+intervalo_tempo <- dados_final |>
+  dplyr::mutate(Interval = cut(Time,c(0,15,30,45,60,75,90,105))) |>  
+  dplyr::group_by(Interval) |> 
+  dplyr::summarise(Number = dplyr::n())
+
+time_interval <- dados_eng |>
+  dplyr::mutate(Interval = cut(Time,c(0,15,30,45,60,75,90,105))) |> 
+  dplyr::group_by(Interval) |> 
+  dplyr::summarise(Number = dplyr::n())
+end.rcode-->
+<p class='lang section-text' key='analysis-text-02-05'>
+The next variable is Time, which has been broken down into intervals of 15 minutes in length and we see that most restaurants are at intervals of 30 minutes to 1 hour.
+</p>
+<div class='lang eng-image'>
+<!--begin.rcode echo=FALSE,warning=FALSE
+ggplot2::ggplot(time_interval,ggplot2::aes(y=Interval,x=Number)) +
+  ggplot2::geom_bar(stat='identity',show.legend = FALSE) +
+  ggplot2::labs(x='Number of restaurants',y='Interval') +
+  ggplot2::ggtitle("Number of restaurants by delivery time around the members of IME Jr") +
+  ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))  +
+  ggplot2::coord_cartesian(xlim=c(0,70),expand = FALSE) 
+  
+end.rcode-->
+</div>
+<div class='lang pt-image'>
+<!--begin.rcode echo=FALSE,warning=FALSE
+ggplot2::ggplot(time_interval,ggplot2::aes(y=Interval,x=Number)) +
+  ggplot2::geom_bar(stat='identity',show.legend = FALSE) +
+  ggplot2::labs(x='Número de restaurantes',y='Time Interval') +
+  ggplot2::ggtitle("Número de restaurantes pelo tempo de entrega nos arredorres dos membros da IME Jr") + ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))  +
+  ggplot2::coord_cartesian(xlim=c(0,50),expand = FALSE) 
+end.rcode-->
+</div>
+<!--begin.rcode echo=FALSE,warning=FALSE,include=FALSE
+intervalo_preco <- dados_final |>
+  dplyr::mutate(Interval = cut(Price,c(-1,0,5,10,15,20,25))) |>  
+  dplyr::group_by(Interval) |> 
+  dplyr::summarise(Number = dplyr::n())
+
+price_interval <- dados_eng |>
+  dplyr::mutate(Interval = cut(Price,c(-1,0,5,10,15,20,25))) |>
+  dplyr::group_by(Interval) |> 
+  dplyr::summarise(Number = dplyr::n())
+end.rcode-->
+<p class = 'lang section-text' key='analysis-text-02-06'>
+For a Price variable, which has been divided into ranges with a length of 5 BRL and see what the price range of most restaurants is [5.10], followed by the range of (0.5] BRL, with a range [-1, 0) indicates that the restaurant has not set the price of your product.
+</p>
+<div class='grid'>
+ <div class='lang eng-image'>
+<!--begin.rcode echo=FALSE,warning=FALSE,results='hide',fig.keep='all'
+
+ggplot2::ggplot(intervalo_preco,ggplot2::aes(y=Interval,x=Number)) +
+  ggplot2::geom_bar(stat='identity',show.legend = FALSE) +
+  ggplot2::labs(x='Number of restaurants',y='Price Interval') +
+  ggplot2::ggtitle("Number of restaurants by price interval around the members of IME Jr") +
+  ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))  +
+  ggplot2::coord_cartesian(xlim=c(0,70),expand = FALSE) 
+end.rcode-->
+</div>
+
+<div class='lang pt-image' >
+<!--begin.rcode echo=FALSE,warning=FALSE,results='hide',fig.keep='all'
+ggplot2::ggplot(intervalo_preco,ggplot2::aes(y=Interval,x=Number)) +
+  ggplot2::geom_bar(stat='identity',show.legend = FALSE) +
+  ggplot2::labs(x='Número de restaurantes',y='Intervalo de preço') +
+  ggplot2::ggtitle("Número de restaurantes pelo intervalo de preço nos arredorres dos membros da IME Jr") +
+  ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))  +
+  ggplot2::coord_cartesian(xlim=c(0,70),expand = FALSE) 
+end.rcode-->
+</div>
+<!--begin.rcode echo=FALSE,warning=FALSE,include=FALSE
+intervalo_nota <- dados_final |>
+  dplyr::mutate(Interval = cut(Rating,c(-1,0,1,2,4,5))) |>  
+  dplyr::group_by(Interval) |> 
+  dplyr::summarise(Number = dplyr::n())
+
+rate_interval <- dados_eng |>
+  dplyr::mutate(Interval = cut(Rating,c(-1,0,1,2,4,5))) |>
+  dplyr::group_by(Interval) |> 
+  dplyr::summarise(Number = dplyr::n())
+end.rcode-->
+<p class = 'lang section-text' key='analysis-text-02-07'>
+For a Rating variable, which was divided into intervals with a length of 1 and we see that the price range of most restaurants is (4.5], there are several restaurants with a rating of 0 due to the recent entry into the app.
+</p>
+ <div class='lang eng-image'>
+<!--begin.rcode echo=FALSE,warning=FALSE,results='hide',fig.keep='all'
+ggplot2::ggplot(rate_interval,ggplot2::aes(y=Interval,x=Number)) +
+  ggplot2::geom_bar(stat='identity',show.legend = FALSE) +
+  ggplot2::labs(x='Number of restaurants',y='Rating') +
+  ggplot2::ggtitle("Number of restaurants by rating around the members of IME Jr") +
+  ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))  +
+  ggplot2::coord_cartesian(xlim=c(0,70),expand = FALSE) 
+end.rcode-->
+</div>
+
+<div class='lang pt-image'>
+<!--begin.rcode echo=FALSE,warning=FALSE,results='hide',fig.keep='all'
+ggplot2::ggplot(intervalo_nota,ggplot2::aes(y=Interval,x=Number)) +
+  ggplot2::geom_bar(stat='identity',show.legend = FALSE) +
+  ggplot2::labs(x='Número de restaurantes',y='Nota') +
+  ggplot2::ggtitle("Número de restaurantes pela nota nos arredorres dos membros da IME Jr") +
+  ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))  +
+  ggplot2::coord_cartesian(xlim=c(0,70),expand = FALSE) 
+end.rcode-->
+</div>
+<p class = 'lang section-text' key='analysis-text-02-08'>
+In this part, we'll analyze the relation between the four variables used with IME Jr's members(User).
+</p>
+<p class = 'lang section-text' key='analysis-text-02-09'>
+With a variable Type, perceived that G member has the more diversity of type of restaurants.
+</p>
+<div class='lang eng-image'>
+<!--begin.rcode echo=FALSE,warning=FALSE
+ggplot2::ggplot(loja_distinto,ggplot2::aes(x=Number,y=forcats::fct_reorder(User,Number))) +
+  ggplot2::geom_bar(stat='identity',show.legend = FALSE) +
+  ggplot2::labs(x='Number of specialty',y='IME Jr member') +
+  ggplot2::ggtitle("Number of types of restaurants by IME Jr member") +
+  ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
+end.rcode-->
+</div>
+<div class='lang pt-image'>
+<!--begin.rcode echo=FALSE,warning=FALSE
+ ggplot2::ggplot(loja_distinto,ggplot2::aes(x=Number,y=forcats::fct_reorder(User,Number))) +
+  ggplot2::geom_bar(stat='identity',show.legend = FALSE) +
+  ggplot2::labs(x='Número de especialidades',y='Membro da IME Jr') +
+  ggplot2::ggtitle("Número de tipos de restaurantes por membro da IME Jr") + 
+  ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
+end.rcode-->
+</div>
+<p class = 'lang section-text' key='analysis-text-02-10'>
+With a variable Price, perceived that overall price of E member has higher than others members of IME Jr because of your geography location.
+</p>
+<div class='lang eng-image'>
+<!--begin.rcode echo=FALSE,warning=FALSE
+ggplot2::ggplot(dados_final,ggplot2::aes(y=Price,x = User,fill=User)) + 
+  ggplot2::geom_boxplot()+
+  ggplot2::labs(x="IME Jr's member",y='Price') +
+  ggplot2::ggtitle("Price of restaurants by IME Jr member") +
+  ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
+end.rcode-->
+</div>
+<div class='lang pt-image'>
+<!--begin.rcode echo=FALSE,warning=FALSE
+ggplot2::ggplot(dados_eng,ggplot2::aes(y=Price,x=User,fill = User)) + 
+  ggplot2::geom_boxplot()+
+  ggplot2::labs(x='Membro da IME Jr',y='Preço') +
+  ggplot2::ggtitle("Preço dos restaurantes por membros da IME Jr") +
+  ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
+end.rcode-->
+</div>
+<p class = 'lang section-text' key='analysis-text-02-11'>
+With a variable Time, perceived that overall time of E member has lower than others members of IME Jr because of geography location, because E lives in center of São Paulo.
+</p>
+<div class='lang eng-image'>
+<!--begin.rcode echo=FALSE,warning=FALSE
+ggplot2::ggplot(dados_final,ggplot2::aes(y=Time,x = User,fill=User)) + 
+  ggplot2::geom_boxplot()+
+  ggplot2::labs(x="IME Jr's member",y='Delivery Time') +
+  ggplot2::ggtitle("Delivery time of restaurants by the members of IME Jr") +
+  ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
+end.rcode-->
+</div>
+<div class='lang pt-image'>
+<!--begin.rcode echo=FALSE,warning=FALSE
+ggplot2::ggplot(dados_eng,ggplot2::aes(y=Time,x=User,fill = User)) + 
+  ggplot2::geom_boxplot()+
+  ggplot2::labs(x='Membro da IME Jr',y='Tempo de Entrega') +
+  ggplot2::ggtitle("Tempo de entrega dos restaurantes por membros da IME Jr") +
+  ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
+end.rcode-->
+</div>
+<p class = 'lang section-text' key='analysis-text-02-12'>
+With the variable Rating, it was noticed that the variability of the ratings of member A is higher than that of the other members of IME Jr.
+</p>
+<div class='lang eng-image'>
+<!--begin.rcode echo=FALSE,warning=FALSE
+ggplot2::ggplot(dados_final,ggplot2::aes(y=Rating,x = User,fill=User)) + 
+  ggplot2::geom_boxplot()+
+  ggplot2::labs(x="IME Jr's member",y='Rate') +
+  ggplot2::ggtitle("Ratings of restaurants by the members of IME Jr") +
+  ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
+end.rcode-->
+</div>
+<div class='lang pt-image'>
+<!--begin.rcode echo=FALSE,warning=FALSE
+ggplot2::ggplot(dados_eng,ggplot2::aes(y=Rating,x=User,fill = User)) + 
+  ggplot2::geom_boxplot()+
+  ggplot2::labs(x='Membro da IME Jr',y='Nota') +
+  ggplot2::ggtitle("Nota dos restaurants por membro da IME Jr ") +
+  ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
+end.rcode-->
+</div>
+
+<h3 class='lang section-about' key='analysis-outro-01'>
+Conclusion
+</h3>
+<p class = 'lang section-text' key='analysis-text-02-13'>
+With these informations, see the restaurants of the center of São Paulo is more expensive and the food delivery are more faster than other cities, like A and G members or other district, like of M.
+</p>
+<p class = 'lang section-text' key='analysis-text-02-14'>
+Image - Ifood.
+</p>
+</main>
+    <footer class='footer'>
+        <ul class='footer-center'>
+            <li class='footer-logo'>
+                <a href='https://www.linkedin.com/in/emanuel-hark-maciel-424348186/'>
+                    <i class="fab fa-linkedin footer-logo"></i>
+                </a>
+            </li>
+            <li class='footer-logo'>
+                <a href='https://github.com/EmanuelHark12'>
+                    <i class="fab fa-github footer-logo"></i>
+                </a>
+                
+            </li>
+        </ul>
+    </footer> 
+</body>
+</html>
+
+
+

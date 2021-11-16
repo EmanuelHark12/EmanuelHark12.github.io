@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+.inline {
+  background-color: #f7f7f7;
+  border:solid 1px #B0B0B0;
+}
+.error {
+	font-weight: bold;
+	color: #FF0000;
+}
+.warning {
+	font-weight: bold;
+}
+.message {
+	font-style: italic;
+}
+.source, .output, .warning, .error, .message {
+	padding: 0 1em;
+  border:solid 1px #F7F7F7;
+}
+.source {
+  background-color: #f5f5f5;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+.hl.num {
+  color: #AF0F91;
+}
+.hl.str {
+  color: #317ECC;
+}
+.hl.com {
+  color: #AD95AF;
+  font-style: italic;
+}
+.hl.opt {
+  color: #000000;
+}
+.hl.std {
+  color: #585858;
+}
+.hl.kwa {
+  color: #295F94;
+  font-weight: bold;
+}
+.hl.kwb {
+  color: #B05A65;
+}
+.hl.kwc {
+  color: #55aa55;
+}
+.hl.kwd {
+  color: #BC5A65;
+  font-weight: bold;
+}
+</style>
+    <title>
+        Emanuel Hark Maciel - Analysis
+    </title>
+    <meta charset="utf-8">
+    <meta name="author" content="">
+    <meta name='description' content="">
+    <link rel='stylesheet' href='../../css/normalize.css'>
+    <link rel='stylesheet' href='../../css/style.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='../../js/language.js'></script>
+    <script src="https://kit.fontawesome.com/d7d04966f2.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" type="image/x-icon" href="https://emanuelhark12.github.io/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="apple-touch-icon" sizes="57x57" href="../../img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../img/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="https://emanuelhark12.github.io/img/img/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../img/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://emanuelhark12.github.io/img/favicon-16x16.png">
+<link rel="manifest" href="../../img/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="../../img/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff"> 
+</head>
+
+<body>
+<header id='header'>
+           <nav class='top-nav navbar'>
+                <span class="navbar-toggle" id="js-navbar-toggle">
+                    <i class="fas fa-bars"></i>
+                </span>
+                <a class='header-logo logo' >
+                    <img src='../../img/logo.png'>
+                </a>
+                <ul class='main-nav' id="js-menu">
+                    <li>
+                        <a class='lang nav-links' href='#about' key='about'>About Me</a>
+                    </li>
+                    <li>
+                        <a class='lang nav-links' href='#analysis' key='analysis'>Analysis</a>
+                    </li>
+                    <li>
+                        <a class='lang nav-links' href='#thoughts' key='thought'>Thoughts</a>
+                    </li>
+                    <li >
+                        <a class='lang nav-links' href='#study' key='study'>Studies</a>
+                    </li>
+                    <li >
+                       <a class='lang nav-links' href='#works' key='works'> Works</a>
+                    </li>
+                    <li>
+                        <select class='translated nav-links'>
+                            <option value='en'> English </option>
+                            <option value='pt'> Português</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul class='main-nav' id="js-menu-web">
+                    <li>
+                        <a class='lang nav-links' href='#about' key='about'>About Me</a>
+                    </li>
+                    <li>
+                        <a class='lang nav-links' href='#analysis' key='analysis'>Analysis</a>
+                    </li>
+                    <li>
+                        <a class='lang nav-links' href='#thoughts' key='thought'>Thoughts</a>
+                    </li>
+                    <li >
+                        <a class='lang nav-links' href='#study' key='study'>Studies</a>
+                    </li>
+                    <li >
+                       <a class='lang nav-links' href='#works' key='works'> Works</a>
+                    </li>
+                    <li>
+                        <select class='translated nav-links'>
+                            <option value='en' selected> English </option>
+                            <option value='pt'> Português</option>
+                        </select>
+                    </li>
+                </ul>
+        </nav> 
+    </header>
+<main>
+
+<h1 class='lang section-title' key='analysis-title-02'>
+Exploration Data Analysis of Restaurants in Ifood
+</h1>
+<h2 class='lang section-about' key='analysis-subtitle-02'>
+Analysis of data from restaurants around the homes of IME Jr members
+</h2>
+<h2 class='lang section-about' key='analysis-date-02'>
+11/16/2021
+</h2>
+<div class='img-analysis'>
+  <img src='../../img/Ifood.jpg'> </img>
+</div>
+<h3 class='lang section-about' key='analysis-item-02-01'>
+Introduction
+</h3>
+<p class='lang section-text' key='analysis-text-01-01'>
+This is an analysis of data on Ifood's restaurants that are located around the homes of the IME Jr's members. The main objective of this analysis is to collect data from the internet through web-scraping and process them.
+</p>
+<p class='lang section-text' key='analysis-text-01-00'>
+For this analysis, the R language was used with the packages:
+</p>
+<ul>
+  <li class='lang' key='analysis-packages-08'> Stringr: String-type variable treatments</li>
+  <li class='lang' key='analysis-packages-02'> Tidyr: Tidy Data</li>
+  <li class='lang' key='analysis-packages-03'> Dplyr: Data manipulation to extract results</li>
+  <li class='lang' key='analysis-packages-09'> Purrr: Functional programming</li>
+  <li class='lang' key='analysis-packages-14'> Forcats: Treatment of categorical variables </li>
+  <li class='lang' key='analysis-packages-04'> Ggplot2: Elaboration of statistical graphics</li>
+  <li class='lang' key='analysis-packages-10'> Parsnip: Simplifying Model Building</li>
+  <li class='lang' key='analysis-packages-11'> Recipes: Data preparation through feature engineering for model building  </li>
+  <li class='lang' key='analysis-packages-12'> Broom: Treatment of statistical results  </li>
+  <li class='lang' key='analysis-packages-13'> Workflows: Integration between parsnip packages and recipes  </li>
+</ul>
+<h3 class='lang section-about' key='analysis-item-02-02'>
+Treatment
+</h3>
+<p class='lang section-text' key='analysis-text-02-01'>
+Por conta de praticidade, cada membro da EJ utilizou a extensão Web Scraper - Free Web Scraping em navegadores Chromium para a coleta das seguintes informações referentes a 30 empresas localizadas ao redor do membro:
+For a pratice reason, each IME JR member use a Chromium extension 'Web Scraper - Free Web Scraping' for collect the followings information about 30 restaurants around the house of IME Jr member:
+</p>
+<ul>
+  <li class='lang' key='analysis-variable-02-01'> id: Variable of identity;</li>
+  <li class='lang' key='analysis-variable-02-02'> Name: Name of restaurant;</li>
+  <li class='lang' key='analysis-variable-02-03'> Type: Specialty of restaurant;</li>
+  <li class='lang' key='analysis-variable-02-04'> Time: Duration of delivery from restaurant to home in minutes;</li>
+  <li class='lang' key='analysis-variable-02-05'> Price: Price of restaurant food or drink in BRL;</li>
+  <li class='lang' key='analysis-variable-02-06'> Rating: Rating given by user to the restaurant;</li>
+  <li class='lang' key='analysis-variable-02-07'> User: IME Jr member who collect restaurant information;</li>
+</ul>
+<h3 class='lang section-about' key='analysis-item-02-03'>
+Exploration Analysis
+</h3>
+<p class='lang section-text' key='analysis-text-02-02'>
+For analysis, we used data from myself and 3 other IME Jr members, cited by E, M, A and G.
+</p>
+<p class='lang section-text' key='analysis-text-02-03'>
+From now on, the variables will be analyzed one-dimensionally.
+</p>
+
+<p class='lang section-text' key='analysis-text-02-04'>
+  The first variable observed is the Type, where there is a predominance of Snacks, which is the most common restaurant specialty, then there are Japanese, which grew recently, and Pizza type restaurants, which have more than 10 restaurants.
+</p>
+<div class='lang eng-image'>
+<div class="chunk" id="unnamed-chunk-3"><div class="rimage default"><img src="figure/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" class="plot" /></div></div>
+</div>
+
+<div class='lang pt-image'>
+<div class="chunk" id="unnamed-chunk-4"><div class="rimage default"><img src="figure/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" class="plot" /></div></div>
+</div>
+
+<p class='lang section-text' key='analysis-text-02-05'>
+The next variable is Time, which has been broken down into intervals of 15 minutes in length and we see that most restaurants are at intervals of 30 minutes to 1 hour.
+</p>
+<div class='lang eng-image'>
+<div class="chunk" id="unnamed-chunk-6"><div class="rimage default"><img src="figure/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" class="plot" /></div></div>
+</div>
+<div class='lang pt-image'>
+<div class="chunk" id="unnamed-chunk-7"><div class="rimage default"><img src="figure/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" class="plot" /></div></div>
+</div>
+
+<p class = 'lang section-text' key='analysis-text-02-06'>
+For a Price variable, which has been divided into ranges with a length of 5 BRL and see what the price range of most restaurants is [5.10], followed by the range of (0.5] BRL, with a range [-1, 0) indicates that the restaurant has not set the price of your product.
+</p>
+<div class='grid'>
+ <div class='lang eng-image'>
+<div class="chunk" id="unnamed-chunk-9"><div class="rimage default"><img src="figure/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" class="plot" /></div></div>
+</div>
+
+<div class='lang pt-image' >
+<div class="chunk" id="unnamed-chunk-10"><div class="rimage default"><img src="figure/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" class="plot" /></div></div>
+</div>
+
+<p class = 'lang section-text' key='analysis-text-02-07'>
+For a Rating variable, which was divided into intervals with a length of 1 and we see that the price range of most restaurants is (4.5], there are several restaurants with a rating of 0 due to the recent entry into the app.
+</p>
+ <div class='lang eng-image'>
+<div class="chunk" id="unnamed-chunk-12"><div class="rimage default"><img src="figure/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" class="plot" /></div></div>
+</div>
+
+<div class='lang pt-image'>
+<div class="chunk" id="unnamed-chunk-13"><div class="rimage default"><img src="figure/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" class="plot" /></div></div>
+</div>
+<p class = 'lang section-text' key='analysis-text-02-08'>
+In this part, we'll analyze the relation between the four variables used with IME Jr's members(User).
+</p>
+<p class = 'lang section-text' key='analysis-text-02-09'>
+With a variable Type, perceived that G member has the more diversity of type of restaurants.
+</p>
+<div class='lang eng-image'>
+<div class="chunk" id="unnamed-chunk-14"><div class="rimage default"><img src="figure/unnamed-chunk-14-1.png" title="plot of chunk unnamed-chunk-14" alt="plot of chunk unnamed-chunk-14" class="plot" /></div></div>
+</div>
+<div class='lang pt-image'>
+<div class="chunk" id="unnamed-chunk-15"><div class="rimage default"><img src="figure/unnamed-chunk-15-1.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" class="plot" /></div></div>
+</div>
+<p class = 'lang section-text' key='analysis-text-02-10'>
+With a variable Price, perceived that overall price of E member has higher than others members of IME Jr because of your geography location.
+</p>
+<div class='lang eng-image'>
+<div class="chunk" id="unnamed-chunk-16"><div class="rimage default"><img src="figure/unnamed-chunk-16-1.png" title="plot of chunk unnamed-chunk-16" alt="plot of chunk unnamed-chunk-16" class="plot" /></div></div>
+</div>
+<div class='lang pt-image'>
+<div class="chunk" id="unnamed-chunk-17"><div class="rimage default"><img src="figure/unnamed-chunk-17-1.png" title="plot of chunk unnamed-chunk-17" alt="plot of chunk unnamed-chunk-17" class="plot" /></div></div>
+</div>
+<p class = 'lang section-text' key='analysis-text-02-11'>
+With a variable Time, perceived that overall time of E member has lower than others members of IME Jr because of geography location, because E lives in center of São Paulo.
+</p>
+<div class='lang eng-image'>
+<div class="chunk" id="unnamed-chunk-18"><div class="rimage default"><img src="figure/unnamed-chunk-18-1.png" title="plot of chunk unnamed-chunk-18" alt="plot of chunk unnamed-chunk-18" class="plot" /></div></div>
+</div>
+<div class='lang pt-image'>
+<div class="chunk" id="unnamed-chunk-19"><div class="rimage default"><img src="figure/unnamed-chunk-19-1.png" title="plot of chunk unnamed-chunk-19" alt="plot of chunk unnamed-chunk-19" class="plot" /></div></div>
+</div>
+<p class = 'lang section-text' key='analysis-text-02-12'>
+With the variable Rating, it was noticed that the variability of the ratings of member A is higher than that of the other members of IME Jr.
+</p>
+<div class='lang eng-image'>
+<div class="chunk" id="unnamed-chunk-20"><div class="rimage default"><img src="figure/unnamed-chunk-20-1.png" title="plot of chunk unnamed-chunk-20" alt="plot of chunk unnamed-chunk-20" class="plot" /></div></div>
+</div>
+<div class='lang pt-image'>
+<div class="chunk" id="unnamed-chunk-21"><div class="rimage default"><img src="figure/unnamed-chunk-21-1.png" title="plot of chunk unnamed-chunk-21" alt="plot of chunk unnamed-chunk-21" class="plot" /></div></div>
+</div>
+
+<h3 class='lang section-about' key='analysis-outro-01'>
+Conclusion
+</h3>
+<p class = 'lang section-text' key='analysis-text-02-13'>
+With these informations, see the restaurants of the center of São Paulo is more expensive and the food delivery are more faster than other cities, like A and G members or other district, like of M.
+</p>
+<p class = 'lang section-text' key='analysis-text-02-14'>
+Image - Ifood.
+</p>
+</main>
+    <footer class='footer'>
+        <ul class='footer-center'>
+            <li class='footer-logo'>
+                <a href='https://www.linkedin.com/in/emanuel-hark-maciel-424348186/'>
+                    <i class="fab fa-linkedin footer-logo"></i>
+                </a>
+            </li>
+            <li class='footer-logo'>
+                <a href='https://github.com/EmanuelHark12'>
+                    <i class="fab fa-github footer-logo"></i>
+                </a>
+                
+            </li>
+        </ul>
+    </footer> 
+</body>
+</html>
+
+
+
