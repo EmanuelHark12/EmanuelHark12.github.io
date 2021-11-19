@@ -94,7 +94,7 @@
         
     </header>
 <main>
-<!--begin.rcode include=FALSE,warning=FALSE
+<!--begin.rcode label='Setup',include=FALSE,warning=FALSE 
 Sys.setenv("VROOM_CONNECTION_SIZE" = 131072 * 2)
 g = grid::rasterGrob(jpeg::readJPEG("/home/emanuelhark12/Documentos/Site/EmanuelHark12.github.io/img/nba_court.jpg"),width = grid::unit(1,'npc'),height = grid::unit(1,'npc'),interpolate = FALSE)
 g2 = grid::rasterGrob(jpeg::readJPEG("/home/emanuelhark12/Documentos/Site/EmanuelHark12.github.io/img/nba_court2.jpg"),width = grid::unit(1,'npc'),height = grid::unit(1,'npc'),interpolate = FALSE)
@@ -116,6 +116,8 @@ ids2020 <- unique(data2020$idGame)
 ids2019 <- unique(data2019$idGame)
 ids2018 <- unique(data2018$idGame)
 ids2017 <- unique(data2017$idGame)
+end.rcode-->
+<!--begin.rcode label='Setup2',include=FALSE,warning=FALSE 
 ww2021 = nbastatR::box_scores(game_ids = c(ids2021[1:12],ids2020[1:12],ids2019[1:12],ids2018[1:12],ids2017[1:12]),box_score_types = c("Traditional"), result_types = c("player"), join_data = TRUE, assign_to_environment = TRUE, return_message = TRUE) 
 game1 <- ww2021[[2]][[1]]
 
@@ -260,7 +262,7 @@ It can also be seen from this graph of shooting attempts on the court by season,
 </p>
 <div class='grid'>
  <div class='lang eng-image'>
-<!--begin.rcode echo=FALSE,warning=FALSE,results='hide',fig.keep='all'
+<!--begin.rcode label='Court-eng',echo=FALSE,warning=FALSE,results='hide',fig.keep='all' 
 data |> 
   ggplot2::ggplot(ggplot2::aes(x=locationX,y=locationY)) +
   ggplot2::annotation_custom(g, -250, 250, -50, 420) +
@@ -283,7 +285,7 @@ end.rcode-->
 </div>
 
 <div class='lang pt-image'>
-<!--begin.rcode echo=FALSE,warning=FALSE,results='hide',fig.keep='all'
+<!--begin.rcode label='Court-pt',echo=FALSE,warning=FALSE,results='hide',fig.keep='all' 
 data |>  
   ggplot2::ggplot(ggplot2::aes(x=locationX,y=locationY)) +
   ggplot2::annotation_custom(g, -250, 250, -50, 420) +
