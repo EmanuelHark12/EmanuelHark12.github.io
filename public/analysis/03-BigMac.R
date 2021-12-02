@@ -35,13 +35,13 @@ var_summary <- function(df,var,name){
 }
 outlier_cities_top <- function(df,var){
   df %>%
-    select(X1,{{var}}) %>%
+    select(X,{{var}}) %>%
     filter({{var}} > quantile({{var}})[4] + 1.5 *
              (quantile({{var}})[4]-quantile({{var}})[2]))
 }
 outlier_cities_bottom <- function(df,var){
   df %>%
-    select(X1,{{var}}) %>%
+    select(X,{{var}}) %>%
     filter({{var}} < quantile({{var}})[2] - 1.5 *
              (quantile({{var}})[4]-quantile({{var}})[2]))
 }

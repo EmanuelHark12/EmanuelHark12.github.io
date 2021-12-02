@@ -1,22 +1,154 @@
+<!DOCTYPE html>
 <html>
-
 <head>
-<title>Title</title>
+    <title>
+        Emanuel Hark Maciel - Analysis
+    </title>
+    <meta charset="utf-8">
+    <meta name="author" content="<!--rinline cat('Emanuel Hark Maciel') -->">
+    <meta name='description' content="<!--rinline cat('This Site contains Emanuel Hark Maciel analysis, essays, thoughts, etc.') -->">
+    <link rel='stylesheet' href='../../css/normalize.css'>
+    <link rel='stylesheet' href='../../css/style.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='../../js/language.js'></script>
+    <script src="https://kit.fontawesome.com/d7d04966f2.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="../../img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../../img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../../img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../img/favicon-16x16.png">
+    <link rel="manifest" href="../../img/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../../img/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff"> 
 </head>
 
 <body>
+<header id='header'>
+  <nav class='top-nav navbar'>
+    <span class="navbar-toggle" id="js-navbar-toggle">
+      <i class="fas fa-bars"></i>
+    </span>
+    <a class='header-logo logo' >
+      <img src='../../img/logo.png'>
+    </a>
+    <ul class='main-nav' id="js-menu">
+      <li>
+        <a class='lang nav-links' href='../../index.html' key='about'>About Me</a>
+      </li>
+      <li>
+        <a class='lang nav-links' href='../analysis/analysis.html' key='analysis'>Analysis</a>
+      </li>
+      <li>
+        <a class='lang nav-links' href='../thoughts/thoughts.html' key='thought'>Thoughts</a>
+      </li>
+      <li>
+        <a class='lang nav-links' href='../study/study.html' key='study'>Studies</a>
+      </li>
+      <li>
+        <a class='lang nav-links' href='../works/works.html' key='works'> Works</a>
+      </li>
+      <li>
+        <select class='translated nav-links'>
+          <option value='en' selected> English </option>
+          <option value='pt'> Português</option>
+        </select>
+      </li>
+    </ul>
+    <ul class='main-nav' id="js-menu-web">
+      <li>
+        <a class='lang nav-links' href='../../index.html' key='about'>About Me</a>
+      </li>
+      <li>
+        <a class='lang nav-links' href='../analysis/analysis.html' key='analysis'>Analysis</a>
+      </li>
+      <li>
+        <a class='lang nav-links' href='../thoughts/thoughts.html' key='thought'>Thoughts</a>
+      </li>
+      <li>
+        <a class='lang nav-links' href='../study/study.html' key='study'>Studies</a>
+      </li>
+      <li>
+        <a class='lang nav-links' href='../works/works.html' key='works'> Works</a>
+      </li>
+      <li>
+        <select class='translated nav-links'>
+          <option value='en' selected> English </option>
+          <option value='pt'> Português</option>
+        </select>
+      </li>
+    </ul>
+  </nav> 
+</header>
+<main>
+<!--begin.rcode label='Setup-MAC',include=FALSE,warning=FALSE 
+`%>%` <- magrittr::`%>%`
+library(magrittr)
+library(rlang)
+library(tidyverse)
+mac_today <- read.csv('/home/emanuelhark12/Documentos/Site/EmanuelHark12.github.io/public/analysis/data/big-mac-source-data.csv') |> tibble::as_tibble()
+var_summary <- function(df,var,name){
+  df %>%
+    dplyr::summarise(Média = mean({{var}}),
+              Mediana = median({{var}}),
+              Desvio_Padrão = sd({{var}}),
+              Desvio_Absoluto = mad({{var}}),
+              Mínino = min({{var}}),
+              Máximo = max({{var}})) |> 
+    dplyr::bind_cols(Nome = name)
+}
 
-<p>This is an R HTML document. When you click the <b>Knit HTML</b> button a web page will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
-
-<!--begin.rcode
-summary(cars)
+outlier_cities_top <- function(df,var){
+  df %>%
+    dplyr::select(X,{{var}}) %>%
+    dplyr::filter({{var}} > quantile({{var}})[4] + 1.5 *
+             (quantile({{var}})[4]-quantile({{var}})[2]))
+}
+outlier_cities_bottom <- function(df,var){
+  df %>% 
+    dplyr::select(X,{{var}}) %>%
+    dplyr::filter({{var}} < quantile({{var}})[2] - 1.5 *
+             (quantile({{var}})[4]-quantile({{var}})[2]))
+}
 end.rcode-->
 
-<p>You can also embed plots, for example:</p>
-
-<!--begin.rcode fig.width=7, fig.height=6
-plot(cars)
+<!--begin.rcode echo=FALSE,warning=FALSE
+ggplot2::ggplot(mac_today) +
+  ggplot2::geom_histogram(ggplot2::aes(x = BigMac),binwidth = 15) +
+  ggplot2::ggtitle('Tempo de trabalho para a compra de 1 bigmac') +
+  ggplot2::labs(x = 'Minutos',y='Cidades') +
+  ggplot2::scale_x_continuous(breaks = seq(min(mac_today$BigMac)-3,max(mac_today$BigMac),by=15))
+outlier_cities_top(mac_today,Bread)
+outlier_cities_bottom(mac_today,Bread)
 end.rcode-->
 
+</main>
+    <footer class='footer'>
+        <ul class='footer-center'>
+            <li class='footer-logo'>
+                <a href='https://www.linkedin.com/in/emanuel-hark-maciel-424348186/'>
+                    <i class="fab fa-linkedin footer-logo"></i>
+                </a>
+            </li>
+            <li class='footer-logo'>
+                <a href='https://github.com/EmanuelHark12'>
+                    <i class="fab fa-github footer-logo"></i>
+                </a>
+            </li>
+        </ul>
+    </footer> 
 </body>
+</html>
+
 </html>
